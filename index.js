@@ -6,4 +6,8 @@ const app = require('express')();
 require('./config/express')(app);
 require('./config/routes')(app);
 
+app.get('/', function (req, res) {
+    res.send('get req to homepage');
+})
+
 app.listen(config.port, console.log(`Listening on port ${config.port}! Now its up to you...`));
