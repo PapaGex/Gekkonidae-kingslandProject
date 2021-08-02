@@ -6,8 +6,10 @@ const app = require('express')();
 require('./config/express')(app);
 require('./config/routes')(app);
 
+app.set('view engine', 'handlebars')
+
 app.get('/', function (req, res) {
-    res.send('get req to homepage');
+    res.render('views/index.hbs');
 })
 
 app.listen(config.port, console.log(`Listening on port ${config.port}! Now its up to you...`));
