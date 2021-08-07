@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const Accesory = require('./Accessory');
+const create = require('./creat');
+
+
 
   const gekkoSchema = new mongoose.GekkoSchema({
     name: {
