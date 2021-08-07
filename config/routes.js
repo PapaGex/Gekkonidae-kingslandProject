@@ -22,6 +22,9 @@ module.exports = (app) => {
         res.render("create")
     });
     app.get('/details/:id', function (req, res) {
+        res.render("incubator");
+    });
+    app.get('/details/:id', function (req, res) {
         res.render("details");
     });
     app.get('/*', function (req, res) {
