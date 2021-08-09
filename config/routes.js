@@ -1,17 +1,9 @@
 
 const express = require('express');
-/*const handlebars = require('handlebars');
-const router = express.router();
-
-router.get('/views/about.hbs', (req, res) => {
-    res.render('/views/about.hbs');
-});
-*/
 
 module.exports = (app) => {
 
-  //  app.set('view engine', 'handlebars');
-    // TODO...
+
     app.get('/', function(req, res) {
         res.render("index");
     });
@@ -21,7 +13,13 @@ module.exports = (app) => {
     app.get('/create', function (req, res) {
         res.render("create")
     });
-    app.get('/details/:id', function (req, res) {
+    app.get('/create/accessory', function (req, res) {
+        res.render("accessory")
+    });
+    app.get('/create/accessory/:id', function (req, res) {
+        res.render("accessory")
+    });
+    app.get('/incubator', function (req, res) {
         res.render("incubator");
     });
     app.get('/details/:id', function (req, res) {

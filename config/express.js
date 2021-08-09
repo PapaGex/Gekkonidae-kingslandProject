@@ -1,13 +1,9 @@
 const express = require('express');
 const HandleTemplate = require('express-handlebars');
 const bodyParser = require('body-parser');
-// const root = require('root');
-// const url = require('url');
-// const path = require('path');
-// let app = express();
-// const  controllers = require('')
+
 module.exports = (app) => {
-    //TODO: Setup the view engine
+
 
     app.set('view engine', 'hbs');
     app.engine( "hbs",
@@ -15,13 +11,10 @@ module.exports = (app) => {
             layoutsDir: __dirname + "/views", partialsDir: __dirname + "/views", })
     );
 
-   // app.engine("HandleTemplate", );
-
-    //TODO: Setup the body parser
 
     app.use(bodyParser.urlencoded({ extended: true}));
 
-    //TODO: Setup the static files
+
 
 
     app.use(express.static('static'));
