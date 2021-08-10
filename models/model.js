@@ -26,8 +26,11 @@ client.connect(err => {
         type: String,
         required: true
     },
-// {add boolean for adult or hatchling}
+    hatchDate: {
+        type: Date,
+        required: true
+    }
 // {habitat descriptor from radio button}
-// {hatch date or close approximation}
+
 // {ease of care}
   })

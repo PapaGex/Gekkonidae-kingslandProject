@@ -4,6 +4,9 @@
     "authors": "author",
     "version": "1.0.0",
     "main": "pathToMain",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
     "dependencies": {
         "body-parser": "^1.19.0",
         "express": "^4.17.1",
@@ -12,8 +15,7 @@
         "hbs": "^4.1.2",
         "mongo": "^0.1.0",
         "mongodb": "^4.0.1",
-        "mongoose": "^5.13.5",
-        "mongosh": "^1.0.3",
+        "mongoose": "^5.13.6",
         "nvm": "^0.0.4",
         "path": "^0.12.7",
         "root": "^3.2.0",
