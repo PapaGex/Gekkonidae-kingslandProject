@@ -13,10 +13,10 @@ module.exports = (app) => {
     app.get('/create', function (req, res) {
         res.render("create")
     });
-    app.get('/create/accessory', function (req, res) {
+    app.get('/create/eggs', function (req, res) {
         res.render("accessory")
     });
-    app.get('/create/accessory/:id', function (req, res) {
+    app.get('/create/eggs/:id', function (req, res) {
         res.render("accessory")
     });
     app.get('/incubator', function (req, res) {

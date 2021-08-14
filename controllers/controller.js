@@ -1,6 +1,6 @@
 const program = require('../models/model')
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://kawekaweau:!Brookesia7$@cluster0.lntxf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://kawekaweau:!Brookesia7$@gekkonidae.lntxf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 // const routes = require('./routes')
     // program_error, program_about, program_create, program_details, program_index
