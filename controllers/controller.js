@@ -1,6 +1,6 @@
 const program = require('../models/model')
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://kawekaweau:!Brookesia7$@gekkonidae.lntxf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+// const uri = "mongodb+srv://kawekaweau:!Brookesia7$@gekkonidae.lntxf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 // const routes = require('./routes')
     // program_error, program_about, program_create, program_details, program_index
@@ -16,14 +16,3 @@ const program_index = (req, res) => {
     })
 }
 
-
-
-client.connect(err => {
-    const collection = client.db("test").collection("devices");
-    // perform actions on the collection object
-    client.close();
-});
-
-module.exports = {
-     program_index
-}

@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 const create = require('./create');
 const app = express();
-//const cors = require('cors');
 let conn = null;
 
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 //const uri = process.env.ATLAS_URI;
@@ -23,7 +22,9 @@ client.connect(err => {
 });
 
 
-  const gekkoSchema = new mongoose.GekkoSchema({
+  const gekkoSchema = new mongoose.GekkoSchema:
+  
+  module.exports = mongoose.model({
     name: {
         type: String,
         required: true

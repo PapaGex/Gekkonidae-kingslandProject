@@ -17,7 +17,6 @@ module.exports = (app) => {
             layoutsDir: __dirname + "/views", partialsDir: __dirname + "/views", })
     );
 
-
     app.use(bodyParser.urlencoded({ extended: true}));
 
 
