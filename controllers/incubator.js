@@ -7,7 +7,7 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/addEggs').post((req, res) => {
+router.route('/incubator').post((req, res) => {
     const evopositionDate = Date.parse(req.body.evopositionDate);
     const incubationTempRange = req.body.incubationTempRange;
     const hatchDateRange = Date.parse(req.body.hatchDateRange);
