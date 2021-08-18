@@ -7,10 +7,10 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/add').post((req, res) => {
-    const speciesName = req.body.speciesName;
+router.route('/addSpecies').post((req, res) => {
+    const species = req.body.species;
 
-    const newSpecies = new Species({speciesName});
+    const newSpecies = new Species({species});
 
     newSpecies.save()
         .then(() => res.json('Species added!'))
