@@ -28,6 +28,9 @@ module.exports = (app) => {
     app.get('/details/:id', function (req, res) {
         res.render("details");
     });
+    app.get('/users', function (req, res) {
+        res.render("users")
+    });
     app.get('/*', function (req, res) {
             res.render("404");
     });
