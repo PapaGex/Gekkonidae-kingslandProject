@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let Gecko = require('../models/gecko.model');
+let Gecko = require('../models/Gecko.model');
 
 router.route('/').get((req, res) => {
     Gecko.find()
@@ -7,7 +7,7 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/add').post((req, res) => {
+router.route('/gecko').post((req, res) => {
     const geckoName = req.body.geckoName;
     const description = req.body.description;
     const hatchDate = Date.parse(req.body.date);
@@ -15,7 +15,7 @@ router.route('/add').post((req, res) => {
     const imageUrl = req.body.imageUrl;
     const purchasePrice = Number(req.body.purchasePrice);
 
-    const newGecko = new Gecko({
+    const newGecko = new gecko({
         geckoName,
         description,
         hatchDate,

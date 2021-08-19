@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let Incubator = require('../models/incubator.model');
+let Incubator = require('../models/Incubator.model');
 
 router.route('/').get((req, res) => {
     Incubator.find()
