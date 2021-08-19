@@ -1,13 +1,13 @@
 const router = require('express').Router();
-let User = require('../models/users.model');
+let User = require('../models/User.model');
 
-router.route('/users').get((req, res) => {
+router.route('/user').get((req, res) => {
     User.find()
-        .then(users => res.json(users))
+        .then(user => res.json(user))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/users').post((req, res) => {
+router.route('/user').post((req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
@@ -28,18 +28,18 @@ router.route('/:id').get((req, res) => {
 });
 
 router.route('/:id').delete((req, res) => {
-    Gecko.findByIdAndDelete(req.params.id)
+    User.findByIdAndDelete(req.params.id)
         .then(() => res.json('User EXTERMINATED!'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/update/:id').post((req, res) => {
-    Gecko.findById(req.params.id)
-        .then(users => {
-            users.username = req.body.username;
-            users.password = req.body.password;
+    User.findById(req.params.id)
+        .then(user => {
+            user.username = req.body.username;
+            user.password = req.body.password;
 
-            users.save()
+            user.save()
                 .then(() => res.json('User Adapted!'))
                 .catch(err => res.status(400).json('Error: ' + err));
                })

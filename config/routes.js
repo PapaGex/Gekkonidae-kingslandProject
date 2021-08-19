@@ -1,7 +1,7 @@
 
 const express = require('express');
 const { restart } = require('nodemon');
-
+const User = require('../models/User.model.js')
 module.exports = (app) => {
 
 
@@ -23,29 +23,30 @@ module.exports = (app) => {
     });
     app.post('/create', function (req, res) {
         console.log('make me frikken gecko dag-nabbit');
-        res.send(req.body)
-    })
-/*    app.get('/create/eggs', function (req, res) {
-        res.render("accessory")
+        res.send(req.body);
     });
-    app.get('/create/eggs/:id', function (req, res) {
-        res.render("accessory")
-    });  */
     app.get('/incubator', function (req, res) {
         res.render("incubator");
     });
     app.post('/incubator', function(req, res) {
         console.log('dont count ya chickens');
         res.send(req.body);
-    })
+    });
     app.get('/details/:id', function (req, res) {
         res.render("details");
     });
-    app.get('/users', function (req, res) {
-        res.render("users")
+    app.get('/user', function (req, res) {
+        res.render("user")
     });
-    app.post('/users', function (req, res) {
-        console.log('shit better be workin');
+    app.post('/user', async function (req, res) {
+        // access my user model
+        console.log(req.body);
+        let user = new User({username: req.body.username, password: req.body.password})
+        console.log('User', user);
+        await user.save()
+        // get passwd username from req.body
+        // create a new user then save it
+        console.log('shit be workin except the username');
         res.send()
     })
     app.get('/*', function (req, res) {
