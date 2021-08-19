@@ -35,3 +35,11 @@ module.exports = (app) => {
             res.render("404");
     });
 };
+
+/* 
+var bcrypt = require('bcryptjs');
+bcrypt.genSalt(10, function(err, salt){
+    bcrypt.hash("B4c0/V", salt, function(err, hash){
+    });
+});
+*/
