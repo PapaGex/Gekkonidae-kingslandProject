@@ -13,9 +13,9 @@
     <header>
       <ul>
         <li><img class="logo" src="images/geckos-png-images-transparent-free-download-805548.jpeg"></li>
-        <li><a href="/">Species</a></li>
+        <li><a href="/">Home Page</a></li>
         <li><a href="/species">Add New Species</a></li>
-        <li><a href="/create">Add a New Gecko</a></li>
+        <li><a href="/gecko">Add a New Gecko</a></li>
         <li><a href="/incubator">Add to the Incubator</a></li>
         <li><a href="/about">About our Animals</a></li>
         <li><a href="/user">Login</a></li>
@@ -26,17 +26,17 @@
       <div class="form">
         <form action='/gecko' method="POST">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name">
+          <input type="text" id="geckoName" name="geckoName">
           <label for="name">Species</label>
-          <textarea id="name" name="description"></textarea>
-          <label for="hatchDate">Hatch Date</label>
-          <input type="date" id="name" name="hatchDate"></input>
-          <label for="gender">Gender</label>
+          <input type="text" id="speciesName" name="speciesName">
+          <label for="name">Hatch Date</label>
+          <input type="text" id="hatchDate" name="hatchDate"></input>
+          <label for="name">Gender</label>
           <input type="text" id="gender" name="gender">
           <label for="image">ImageUrl</label>
           <input type="text" id="image" name="image">
           <label for="purchasePrice">Price at Purchase</label>
-          <input type="number" id="purchasePrice" name="purchasePrice">
+          <input type="text" id="purchasePrice" name="purchasePrice">
           <input type="submit" value="Create">
         </form>
       </div>

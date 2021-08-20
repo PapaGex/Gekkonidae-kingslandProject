@@ -1,7 +1,7 @@
 const router = require('express').Router();
 let Gecko = require('../models/Gecko.model');
 
-router.route('/').get((req, res) => {
+router.route('/gecko').get((req, res) => {
     Gecko.find()
         .then(gecko => res.json(gecko))
         .catch(err => res.status(400).json('Error: ' + err));
@@ -9,15 +9,15 @@ router.route('/').get((req, res) => {
 
 router.route('/gecko').post((req, res) => {
     const geckoName = req.body.geckoName;
-    const description = req.body.description;
-    const hatchDate = Date.parse(req.body.date);
+    const speciesName = req.body.description;
+    const hatchDate = req.body.date;
     const gender = req.body.gender;
     const imageUrl = req.body.imageUrl;
-    const purchasePrice = Number(req.body.purchasePrice);
+    const purchasePrice = req.body.purchasePrice;
 
-    const newGecko = new gecko({
+    const gecko = new Gecko({
         geckoName,
-        description,
+        speciesName,
         hatchDate,
         gender,
         imageUrl,
@@ -45,11 +45,11 @@ router.route('/update/:id').post((req, res) => {
     Gecko.findById(req.params.id)
         .then(gecko => {
             gecko.geckoName = req.body.geckoName;
-            gecko.description = req.body.description;
-            gecko.hatchDate = Date.parse(req.body.hatchDate);
+            gecko.speciesName = req.body.speciesName;
+            gecko.hatchDate = req.body.hatchDate;
             gecko.gender = req.body.gender;
             gecko.imageUrl = req.body.imageUrl;
-            gecko.purchasePrice = Number(req.body.purchasePrice);
+            gecko.purchasePrice = req.body.purchasePrice;
 
             gecko.save()
                 .then(() => res.json('Gecko updated!'))

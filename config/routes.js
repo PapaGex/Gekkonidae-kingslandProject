@@ -41,16 +41,14 @@ module.exports = (app) => {
     app.post('/gecko', async function(req, res) {
         let newGecko = new Gecko({
             geckoName: req.body.geckoName,
-            species: req.body.species,
-            hatchDate: Date.parse(req.body.hatchDate),
-            tempLow: req.body.tempLow,
-            tempHigh: req.body.tempHigh,
+            speciesName: req.body.speciesName,
+            hatchDate: req.body.hatchDate,
             gender: req.body.gender,
             purchasePrice: req.body.purchasePrice
         });
         console.log('make me frikken gecko dag-nabbit');
-        console.log("Gecko", gecko);
-        await gecko.save();
+        console.log("Gecko", newGecko);
+        await newGecko.save();
         res.send();
     });
     app.get('/incubator', function(req, res) {
