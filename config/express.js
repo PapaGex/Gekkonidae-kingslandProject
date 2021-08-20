@@ -4,7 +4,9 @@ const HandleTemplate = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-// app.use(cors());01
+const cors = require('cors');
+
+app.use(cors());
 
 
 

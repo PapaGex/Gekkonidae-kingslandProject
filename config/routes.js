@@ -1,7 +1,10 @@
 
 const express = require('express');
 const { restart } = require('nodemon');
-const User = require('../models/User.model.js')
+const User = require('../models/User.model.js');
+const mongoose = require('mongoose');
+
+
 module.exports = (app) => {
 
 
@@ -25,7 +28,7 @@ module.exports = (app) => {
         console.log('ya bettah be adding the genus an species');
         console.log("Species", species);
         await species.save();
-        res.send(req.body);
+        res.send();
     });
     app.get('/gecko', function(req, res) {
         res.render("gecko");
@@ -51,7 +54,7 @@ module.exports = (app) => {
         let incubator = ({ 
             evopositionDate: Date.parse(req.body.evopoositionDate), 
             incubationTempRange: req.body.incubationTempRange, 
-            hatchDateRange: Date.parse(req.body.hatchDateRange), 
+            hatchDateRange: req.body.hatchDateRange, 
             parents: req.body.parents, 
             species: req.body.species
         });
@@ -69,12 +72,12 @@ module.exports = (app) => {
     app.post('/user', async function(req, res) {
         // access my user model
         console.log(req.body);
-        let user = new User({
+        let newUser = new User({
             username: req.body.username, 
             password: req.body.password
         });
-        console.log('User', user);
-        await user.save();
+        console.log('User', newUser);
+        await newUser.save();
         // get passwd username from req.body
         console.log('shit be workin except the username');
         res.send()
