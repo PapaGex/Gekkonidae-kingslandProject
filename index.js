@@ -22,10 +22,12 @@ connection.once('open', () => {
 
 const geckoRouter = require('./controllers/gecko');
 const speciesRouter = require('./controllers/species');
+const incubatorRouter = require('./controllers/incubator');
 
 
 app.use('/gecko', geckoRouter);
 app.use('/species', speciesRouter);
+app.use('/incubator', incubatorRouter);
 
 app.listen(port, () => {
     console.log(`Server is doin its shit on port: ${port}`);

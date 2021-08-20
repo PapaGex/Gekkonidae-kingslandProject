@@ -13,7 +13,7 @@
     <header>
       <ul>
         <li><img class="logo" src="images/geckos-png-images-transparent-free-download-805548.jpeg"></li>
-        <li><a href="/">Species</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/species">Add New Species</a></li>
         <li><a href="/create">Add a New Gecko</a></li>
         <li><a href="/incubator">Add to the Incubator</a></li>
@@ -25,15 +25,17 @@
       <h1>Add a New Species</h1>
       <div class="form">
         <form action='/species' method="POST">
-          <label for="name">Species Name</label>
+          <label for="name">Genus</label>
+          <input type="text" id="genusName" name="genusName">
+          <label for="name">Species</label>
           <input type="text" id="speciesName" name="speciesName">
-          <label for="homeRange">Home Range of Natural Habitat</label>
-          <input type="text"id="name" name="description">
-          <label for="tempLow">Temperature Low</label>
-          <input type="number" id="name" name="hatchDate">
-          <label for="tempHigh">Temperature High</label>
-          <input type="number" id="name" name="hatchDate">
-          <label for="humidity">Humidity Range</label>
+          <label for="name">Home Range of Natural Habitat</label>
+          <input type="text" id="homeRange" name="homeRange">
+          <label for="name">Temperature Low</label>
+          <input type="text" id="tempLow" name="tempLow">
+          <label for="name">Temperature High</label>
+          <input type="text" id="tempHigh" name="tempHigh">
+          <label for="name">Humidity Range</label>
           <input type="text" id="humidity" name="humidity">
           <label for="notes">Notes</label>
           <input type="text" id="notes" name="notes">

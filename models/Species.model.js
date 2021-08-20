@@ -4,23 +4,26 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const speciesSchema = new Schema({
+    genusName: {
+        type: String, required: true, unique: false, trim: true,
+    },
     speciesName: {
-        type: String, required: true, unique: true, trim: true,
+        type: String, required: true, unique: false, trim: true,
     },
     homeRange: {
         type: String, required: false, unique: false, trim: true,
     },
     tempLow: { 
-        type: Number, required: true, unique: false,
+        type: String, required: false, unique: false,
     },
     tempHigh: {
-        type: Number, required: true, unique: false,
+        type: String, required: false, unique: false,
     },
     humidity: {
-        type: String, required: true, unique: false,
+        type: String, required: false, unique: false,
     },
     notes: {
-        type: String, required: false, unique: true,
+        type: String, required: false, unique: false,
     },
 }, {
     timestamps: true,

@@ -1,14 +1,14 @@
 const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema({ driver: ObjectId});
+const Schema = mongoose.Schema;
 
 const incubatorSchema = new Schema({
-    evopositionDate: { type: Date, required: true },
-    incubationTempRange: { type: String, required: true },
-    hatchDateRange: { type: String, required: true },
-    parents: { type: String, required: true },
-    species: { type: String, required: true },
+    evopositionDate: { type: String, required: false },
+    incubationTempRange: { type: String, required: false },
+    hatchDateRange: { type: String, required: false },
+    parents: { type: String, required: false },
+    species: { type: String, required: false },
 }, {
     timestamps: true,
 });

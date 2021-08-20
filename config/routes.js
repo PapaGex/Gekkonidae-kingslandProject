@@ -2,6 +2,9 @@
 const express = require('express');
 const { restart } = require('nodemon');
 const User = require('../models/User.model.js');
+const Species = require('../models/Species.model');
+const Gecko = require('../models/Gecko.model');
+const Incubator = require('../models/Incubator.model'); 
 const mongoose = require('mongoose');
 
 
@@ -17,28 +20,31 @@ module.exports = (app) => {
     app.get('/species', function(req, res) {
         res.render("species");
     });
-    app.post('/species', async function(req, res) {
-        let species = ({
+    app.post('/species', function(req, res) {
+        let newSpecies = new Species({
+            genusName: req.body.genusName,
             speciesName: req.body.speciesName,
             homeRange: req.body.homeRange,
-            tempRange: req.body.tempRange,
-            humidity: req.body.humididty,
-            notes: req.body.notes
+            tempLow: req.body.tempLow,
+            tempHigh: req.body.tempHigh,
+            humidity: req.body.humidity,
+            notes: req.body.notes,
         });
         console.log('ya bettah be adding the genus an species');
-        console.log("Species", species);
-        await species.save();
+        console.log("Species", Species);
+        newSpecies.save();
         res.send();
     });
     app.get('/gecko', function(req, res) {
         res.render("gecko");
     });
     app.post('/gecko', async function(req, res) {
-        let gecko = ({
+        let newGecko = new Gecko({
             geckoName: req.body.geckoName,
             species: req.body.species,
             hatchDate: Date.parse(req.body.hatchDate),
-            imageUrl: req.body.imageUrl,
+            tempLow: req.body.tempLow,
+            tempHigh: req.body.tempHigh,
             gender: req.body.gender,
             purchasePrice: req.body.purchasePrice
         });
@@ -51,16 +57,16 @@ module.exports = (app) => {
         res.render("incubator");
     });
     app.post('/incubator', async function(req, res) {
-        let incubator = ({ 
-            evopositionDate: Date.parse(req.body.evopoositionDate), 
+        let newIncubator = new Incubator({ 
+            evopositionDate: req.body.evopositionDate, 
             incubationTempRange: req.body.incubationTempRange, 
             hatchDateRange: req.body.hatchDateRange, 
             parents: req.body.parents, 
             species: req.body.species
         });
         console.log('dont count ya chickens');
-        console.log('Incubator', incubator);
-        await incubator.save();
+        console.log('Incubator', newIncubator);
+        await newIncubator.save();
         res.send();
     });
     app.get('/details/:id', function(req, res) {
@@ -79,7 +85,7 @@ module.exports = (app) => {
         console.log('User', newUser);
         await newUser.save();
         // get passwd username from req.body
-        console.log('shit be workin except the username');
+        console.log('shit be workin');
         res.send()
     });
     app.get('/*', function(req, res) {
