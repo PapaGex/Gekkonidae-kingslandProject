@@ -15,7 +15,7 @@ img {
     width: auto;
 }
 
-img.gecko {
+img.cube {
     display: block;
     margin: 0 auto;
     text-align: center;
@@ -32,7 +32,7 @@ header {
     list-style-type: none;
     margin: auto;
     padding: 0;
-    background-color: #92490e;
+    background-color: #607588;
 }
 
 header ul li {
@@ -42,8 +42,8 @@ header ul li {
 
 header ul li a {
     text-decoration: none;
-    text-transform: bold;
-    color: rgb(29, 27, 27);
+    text-transform: uppercase;
+    color: white;
     font-weight: bold;
     margin: 0 1em;
 }
@@ -68,7 +68,7 @@ h1 {
     text-transform: uppercase;
 }
 
-div.gecko {
+div.cube {
     display: inline-block;
     border: 1px solid #2b415433;
     background: white;
@@ -76,9 +76,9 @@ div.gecko {
     vertical-align: top;
 }
 
-div.gecko:hover p.name {
-    background: #d66d0a;
-    color: rgb(17, 16, 16);
+div.cube:hover p.name {
+    background: #607588;
+    color: white;
 }
 
 p.name {
@@ -101,8 +101,8 @@ button, main a.btn {
     width: 35%;
     margin: 12px;
     border-radius: 4px;
-    background: #e25c0e;
-    color: rgb(20, 19, 19);
+    background: #607588;
+    color: white;
 }
 
 .details a.btn{
@@ -129,7 +129,7 @@ div.details {
     display: block;
     margin: auto;
     width: 50%;
-    background-color: #080808;
+    background-color: #f3f3f2;
     padding: 1em;
 }
 
@@ -144,7 +144,7 @@ span {
 div.about {
     display: block;
     margin: auto;
-    background-color: #111110;
+    background-color: #f3f3f2;
     padding: 3em;
 }
 
@@ -156,8 +156,8 @@ div.about a {
 }
 
 form label {
-    background: #ee660b;
-    color: rgb(3, 3, 3);
+    background: #607588;
+    color: white;
     padding: 12px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -170,7 +170,7 @@ select,
 textarea {
     width: 100%;
     display: inline-block;
-    border: 1px solid rgb(241, 72, 5);
+    border: 1px solid #ccc;
     box-sizing: border-box;
     padding: 12px 20px 12px 12px;
     border-radius: 0 4px 4px 4px;
@@ -186,7 +186,7 @@ input.search {
 }
 
 input[type=submit] {
-    background-color: #fc7609;
+    background-color: #545775;
     border: none;
     padding: 8px;
     text-align: center;
@@ -195,13 +195,13 @@ input[type=submit] {
     font-size: 18px;
     width: 50%;
     margin: 5px 5px 5px 25%;
-    color: rgb(7, 7, 7);
+    color: white;
     text-transform: uppercase;
     border-radius: 4px;
 }
 
 input[type=submit]:hover {
-    background-color: #f75d15;
+    background-color: #718F94;
     cursor: pointer;
 }
 
@@ -216,7 +216,7 @@ span.error {
     animation: fadeOut 1s forwards;
     animation-delay: 2s;
     background: #EF5542;
-    color: rgb(12, 12, 12);
+    color: white;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -240,7 +240,7 @@ h2{
 
 .accessories .accessory{
     display: inline-block;
-    background-color: #0a0a0a;
+    background-color: #f3f3f2;
     width: 20%;
     padding: 1%;
     margin: 1%;
@@ -252,10 +252,10 @@ h2{
 }
 
 footer {
-    background: #f86809;
+    background: #607588;
     padding: 1em;
     text-align: center;
-    color: rgb(5, 5, 5);
+    color: white;
     font-size: 20px;
 }
 
